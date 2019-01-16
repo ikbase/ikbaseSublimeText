@@ -7,6 +7,10 @@ from .settings import Settings
 from .message import print_err
 from .pyaes import AESModeOfOperationCTR
 
+import os
+
+ikbase_root_path = os.environ['IKBASE_ROOT']
+
 
 EXTRA_STR = 'ENCo0D#DT{xTCh$cKe>'
 ENCODED_IDF = '=*=EnC0d3dH3aDer==*'
@@ -91,8 +95,8 @@ def get_file_list():
     exts = tuple(sts.json['note_extensions'])
     # exts = tuple(["txt","md"])
     # loop through directory
-    for dirpath, dnames, fnames in os.walk(sts.ikbase_root_path):
-        dirname = dirpath.replace(sts.ikbase_root_path, '', 1)
+    for dirpath, dnames, fnames in os.walk(ikbase_root_path):
+        dirname = dirpath.replace(ikbase_root_path+'/', '', 1)
         dirname = re.sub(r'/.*$', '', dirname)
         if dirname.startswith('.'):  # hidden like .git
             continue

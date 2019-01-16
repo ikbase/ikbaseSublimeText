@@ -6,7 +6,7 @@ import re
 import sublime
 import sublime_plugin
 import os
-sys.path.append(os.environ['IKBASE_PY2_PACKAGES'])
+sys.path.append(os.environ['IKBASE_PY3_PACKAGES'])
 from git import Repo
 from .settings import Settings
 from .cryptlib import get_file_list, encode, update_file, get_key, decode

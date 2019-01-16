@@ -21,7 +21,7 @@ class Settings:
 	"""
 	default_json = {
 		'public_folders': ['*'],
-		'private_folders': ['diary'],
+		'private_folders': ["_diary"],
 		'is_encrypted': False,
 		'version': VERSION,
 		'do_git_backup': False,
